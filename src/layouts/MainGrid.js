@@ -4,6 +4,8 @@ import Card from "../components/Card";
 import MyCards from "../components/CardsSection/MyCards";
 import RecentTransactions from "../components/CardsSection/RecentTransactions";
 import ExpenseStats from "../components/CardsSection/ExpenseStats";
+import QuickTransfer from "../components/CardsSection/QuickTransfer";
+import BalanceHistory from "../components/CardsSection/BalanceHistory";
 
 const MainGrid = () => {
   return (
@@ -54,8 +56,12 @@ const MainGrid = () => {
         </Card>
 
         {/* Row 3 */}
-        <Card header="Quick Transfer" className="col-span-1 row-span-1"></Card>
-        <Card header="Balance History" className="col-span-2 row-span-1"></Card>
+        <Card header="Quick Transfer" className="col-span-1 row-span-1">
+          <QuickTransfer />
+        </Card>
+        <Card header="Balance History" className="col-span-2 row-span-1">
+          <BalanceHistory />
+        </Card>
       </div>
     </div>
   );
