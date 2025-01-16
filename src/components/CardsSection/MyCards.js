@@ -21,7 +21,7 @@ const MyCards = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 h-[60%]">
       <div className="flex flex-wrap gap-6">
         {cards.map((card, index) => (
           <div

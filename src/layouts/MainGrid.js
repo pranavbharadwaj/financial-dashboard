@@ -3,59 +3,59 @@
 import Card from "../components/Card";
 import MyCards from "../components/CardsSection/MyCards";
 import RecentTransactions from "../components/CardsSection/RecentTransactions";
+import ExpenseStats from "../components/CardsSection/ExpenseStats";
 
 const MainGrid = () => {
-  // Dummy data for Recent Transactions
-  const transactions = [
-    {
-      description: "Deposit from my card",
-      date: "28 January 2021",
-      amount: "-$850",
-      icon: "📥",
-      type: "debit",
-    },
-    {
-      description: "Credit, Paypal",
-      date: "25 January 2021",
-      amount: "+$2,500",
-      icon: "💳",
-      type: "credit",
-    },
-    {
-      description: "Jemi Wilson",
-      date: "21 January 2021",
-      amount: "+$5,400",
-      icon: "👤",
-      type: "credit",
-    },
-  ];
-
   return (
-    <div className="flex-1 p-6 bg-gray-50 h-full">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
+    <div className="flex  bg-gray-50 overflow-hidden">
+      <div className="grid grid-rows-3 grid-cols-3 gap-4 w-full h-full p-6">
         {/* Row 1 */}
-        <Card header="My Cards" className="lg:col-span-2 h-full">
+        <Card header="My Cards" className="col-span-2 row-span-1">
           <MyCards />
         </Card>
-        <Card header="Recent Transactions" className="h-full">
-          <RecentTransactions transactions={transactions} />
+        <Card
+          header="Recent Transactions"
+          className="col-span-1 row-span-1 overflow-hidden"
+        >
+          <RecentTransactions
+            transactions={[
+              {
+                description: "Deposit from my card",
+                date: "28 January 2021",
+                amount: "+$850",
+                icon: "📥",
+                type: "debit",
+              },
+              {
+                description: "Credit, Paypal",
+                date: "25 January 2021",
+                amount: "+$2,500",
+                icon: "💳",
+                type: "credit",
+              },
+              {
+                description: "Jemi Wilson",
+                date: "21 January 2021",
+                amount: "+$5,400",
+                icon: "👤",
+                type: "credit",
+              },
+            ]}
+          />
         </Card>
 
         {/* Row 2 */}
-        <Card header="Weekly Activity Chart" className="lg:col-span-2 h-full">
-          {/* Chart for Weekly Activity */}
-        </Card>
-        <Card header="Expense Statistics" className="h-full">
-          {/* Chart for Expense Statistics */}
+        <Card
+          header="Weekly Activity Chart"
+          className="col-span-2 row-span-1"
+        ></Card>
+        <Card header="Expense Statistics" className="col-span-1 row-span-1">
+          <ExpenseStats />
         </Card>
 
         {/* Row 3 */}
-        <Card header="Quick Transfer" className="lg:col-span-1 h-full">
-          {/* Content for Quick Transfer */}
-        </Card>
-        <Card header="Balance History" className="lg:col-span-1 h-full">
-          {/* Chart for Balance History */}
-        </Card>
+        <Card header="Quick Transfer" className="col-span-1 row-span-1"></Card>
+        <Card header="Balance History" className="col-span-2 row-span-1"></Card>
       </div>
     </div>
   );

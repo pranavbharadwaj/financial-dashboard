@@ -4,7 +4,7 @@ const RecentTransactions = ({ transactions }) => {
   return (
     <ul className="space-y-4">
       {transactions.map((transaction, index) => (
-        <li key={index} className="flex items-center gap-4 p-4  rounded-lg">
+        <li key={index} className="flex items-center gap-4 p-1 rounded-lg">
           {/* Icon */}
           <span className="text-xl bg-gradient-to-r from-orange-300 to-yellow-400 rounded-full p-2 flex items-center justify-center">
             {transaction.icon}
