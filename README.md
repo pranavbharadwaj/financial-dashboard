@@ -58,6 +58,16 @@ Animations with GSAP:
 
 # Integrated GSAP for animations in the QuickTransfer component to add interactivity and enhance the user experience.
 
+# Accessibility
+
+Incorporated accessibility considerations, such as:
+Focus styles on form elements.
+ARIA attributes for navigation and interactive elements.
+
+# Component-Based Architecture
+
+Built reusable components (Header, Sidebar, Card, QuickTransfer, etc.) for maintainable and scalable code.
+
 # Room for Improvement:
 
 I acknowledge that there is ample scope to enhance the user interface and user experience. Given more time, I would focus on:
