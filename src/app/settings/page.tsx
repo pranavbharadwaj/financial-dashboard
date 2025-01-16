@@ -17,6 +17,12 @@ const SettingsPage = () => {
     address: "",
   });
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
+
   const validate = () => {
     const newErrors = {
       name: formData.name ? "" : "Name is required.",
@@ -45,21 +51,35 @@ const SettingsPage = () => {
   return (
     <div className="flex h-screen w-screen bg-gray-100">
       {/* Sidebar */}
-      <Sidebar />
+      <div
+        className={`fixed lg:static top-0 left-0 h-full bg-white z-10 transition-transform duration-300 ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } lg:translate-x-0 w-64`}
+      >
+        <Sidebar width={"w-1"} />
+      </div>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
         <Header header={"Settings"} />
 
+        {/* Toggle Sidebar Button for Mobile */}
+        <button
+          onClick={toggleSidebar}
+          className="lg:hidden bg-blue-500 text-white px-4 py-2 m-4 rounded-lg"
+        >
+          {isSidebarOpen ? "Hide Sidebar" : "Show Sidebar"}
+        </button>
+
         {/* Settings Form */}
-        <div className="w-4/5 mx-auto mt-8 p-6 bg-white rounded-lg text-black">
+        <div className="w-full lg:w-4/5 mx-auto mt-8 p-6 bg-white shadow rounded-lg">
           <h1 className="text-2xl font-bold mb-4">Edit Profile</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-black-700"
+                className="block text-sm font-medium text-gray-700"
               >
                 Name
               </label>

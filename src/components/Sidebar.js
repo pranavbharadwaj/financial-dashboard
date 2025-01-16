@@ -14,7 +14,7 @@ import {
 } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 
-const Sidebar = () => {
+const Sidebar = ({ width }) => {
   const pathname = usePathname();
 
   const menuOptions = [
@@ -31,7 +31,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className="h-full w-1/6 bg-white text-black flex flex-col"
+      className={"h-full bg-white text-black flex flex-col " + width}
       aria-label="Sidebar navigation"
     >
       <div className="flex items-center justify-center gap-2 h-16">
