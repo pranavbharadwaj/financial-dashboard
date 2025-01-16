@@ -11,7 +11,7 @@ const DashboardLayout = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col bg-gray-50 w-full h-full bg-[#F5F7FA]">
         {/* Header */}
-        <Header />
+        <Header header={"Dashboard"} />
 
         {/* Main Grid */}
         <MainGrid />

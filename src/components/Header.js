@@ -3,11 +3,11 @@
 import { FiSearch, FiSettings, FiBell } from "react-icons/fi";
 import Image from "next/image";
 
-const Header = () => {
+const Header = ({ header }) => {
   return (
     <header className="flex items-center justify-between w-full px-6 py-4 bg-white shadow-md text-black">
       {/* Title */}
-      <h1 className="text-2xl font-bold">Overview</h1>
+      <h1 className="text-2xl font-bold">{header}</h1>
 
       {/* Icons and Search Section */}
       <div className="flex items-center gap-4">
