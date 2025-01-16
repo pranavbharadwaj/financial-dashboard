@@ -30,12 +30,17 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="h-full w-1/6 bg-white text-black flex flex-col">
+    <div
+      className="h-full w-1/6 bg-white text-black flex flex-col"
+      aria-label="Sidebar navigation"
+    >
       <div className="flex items-center justify-center gap-2 h-16">
-        <FiCheckSquare className="text-2xl" />
-        <h1 className="text-xl font-bold">SOAR TASK</h1>
+        <FiCheckSquare className="text-2xl" aria-hidden="true" />
+        <h1 className="text-xl font-bold" aria-label="SOAR TASK">
+          SOAR TASK
+        </h1>
       </div>
-      <nav className="flex flex-col">
+      <nav className="flex flex-col" aria-label="Main navigation">
         {menuOptions.map(({ name, path, icon: Icon }) => (
           <a
             key={name}
@@ -45,8 +50,10 @@ const Sidebar = () => {
                 ? "border-l-4 border-black font-bold"
                 : "hover:bg-gray-100"
             }`}
+            aria-current={pathname === path ? "page" : undefined}
+            aria-label={name}
           >
-            <Icon />
+            <Icon aria-hidden="true" />
             {name}
           </a>
         ))}
