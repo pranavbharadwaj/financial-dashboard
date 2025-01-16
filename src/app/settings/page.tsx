@@ -53,10 +53,10 @@ const SettingsPage = () => {
       {/* Sidebar */}
       <div
         className={`fixed lg:static top-0 left-0 h-full bg-white z-10 transition-transform duration-300 ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          isSidebarOpen ? "translate-x-10" : "-translate-x-full"
         } lg:translate-x-0 w-64`}
       >
-        <Sidebar width={"w-1"} />
+        <Sidebar width={"w-100"} />
       </div>
 
       {/* Main Content */}
