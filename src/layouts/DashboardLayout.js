@@ -1,7 +1,8 @@
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
+import MainGrid from "./MainGrid";
 
-const DashboardLayout = ({ children }) => {
+const DashboardLayout = () => {
   return (
     <div className="flex h-screen h-full">
       {/* Sidebar */}
@@ -12,8 +13,8 @@ const DashboardLayout = ({ children }) => {
         {/* Header */}
         <Header />
 
-        {/* Page Content */}
-        <main className="flex-1 p-6">{children}</main>
+        {/* Main Grid */}
+        <MainGrid />
       </div>
     </div>
   );
